@@ -52,7 +52,15 @@ namespace Generics_Collections.Controllers
             Console.WriteLine(_customerService.GetCount());
         }
         public List<Customer> GetCustomersSortedByAge(string sortOrder)
+
         {
+            var sortedCustomers = _customerService.GetOrderByage("descending");
+            Console.WriteLine("Sıralanmış müşteri :");
+            foreach (var customer in sortedCustomers)
+            {
+                Console.WriteLine($"Name: {customer.FullName}, Age: {customer.Age}, Address: {customer.Address}");
+            }
+
             return _customerService.GetOrderByage(sortOrder);
         }
     }
