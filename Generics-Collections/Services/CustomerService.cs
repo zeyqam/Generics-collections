@@ -30,5 +30,21 @@ namespace Generics_Collections.Services
         {
             return AppDbContext.customers.Count();
         }
+
+        public List<Customer> GetOrderByage(string sortOrder)
+        {
+            if (sortOrder.ToLower() == "ascending")
+            {
+                return AppDbContext.customers.OrderBy(m => m.Age).ToList();
+            }
+            else if (sortOrder.ToLower() == "descending")
+            {
+                return AppDbContext.customers.OrderByDescending(m => m.Age).ToList();
+            }
+            else
+            {
+                throw new ArgumentException(" ascending veya descending istifade edin.");
+            }
+        }
     }
 }

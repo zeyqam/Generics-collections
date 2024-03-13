@@ -13,5 +13,6 @@ namespace Generics_Collections.Services.Interfaces
         Customer GetById(int id);
         List<Customer> GetAllByAge(int age);
         int GetCount();
+        List<Customer> GetOrderByage(string sortOrder);
     }
 }

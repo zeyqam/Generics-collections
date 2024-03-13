@@ -129,4 +129,12 @@ CustomerController customerController = new CustomerController();
 //customerController.GetAll();
 //customerController.GetById();
 //customerController.GetAllByAge();
-customerController.GetACountOfDatas();
+//customerController.GetACountOfDatas();
+var sortedCustomers = customerController.GetCustomersSortedByAge("descending");
+
+// Sıralanmış müşteri listesini yazdırın
+Console.WriteLine("Sıralanmış müşteri :");
+foreach (var customer in sortedCustomers)
+{
+    Console.WriteLine($"Name: {customer.FullName}, Age: {customer.Age}, Address: {customer.Address}");
+}

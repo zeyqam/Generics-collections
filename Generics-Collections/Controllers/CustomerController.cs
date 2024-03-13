@@ -1,4 +1,5 @@
-﻿using Generics_Collections.Services;
+﻿using Generics_Collections.Models;
+using Generics_Collections.Services;
 using Generics_Collections.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,10 @@ namespace Generics_Collections.Controllers
         public void GetACountOfDatas()
         {
             Console.WriteLine(_customerService.GetCount());
+        }
+        public List<Customer> GetCustomersSortedByAge(string sortOrder)
+        {
+            return _customerService.GetOrderByage(sortOrder);
         }
     }
 }
