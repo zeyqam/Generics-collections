@@ -1,5 +1,6 @@
 ﻿
 using Generics_Collections;
+using Generics_Collections.Controllers;
 using Generics_Collections.Data;
 using Microsoft.VisualBasic;
 using System.Collections;
@@ -124,3 +125,8 @@ using System.Collections;
 //    Console.WriteLine(item.FullName);
 //}
 
+CustomerController customerController = new CustomerController();
+//customerController.GetAll();
+//customerController.GetById();
+//customerController.GetAllByAge();
+customerController.GetACountOfDatas();

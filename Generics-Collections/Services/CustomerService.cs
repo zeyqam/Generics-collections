@@ -1,4 +1,5 @@
-﻿using Generics_Collections.Models;
+﻿using Generics_Collections.Data;
+using Generics_Collections.Models;
 using Generics_Collections.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,22 +13,22 @@ namespace Generics_Collections.Services
     {
         public List<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            return AppDbContext.customers;
         }
 
         public Customer GetById(int id)
         {
-            throw new NotImplementedException();
-        }
+            return id==null? throw new ArgumentNullException() : AppDbContext.customers.FirstOrDefault(m => m.Id==id);
+        } 
 
-        public List<Customer> GetByName(string name)
+        public List<Customer> GetAllByAge(int age)
         {
-            throw new NotImplementedException();
+            return AppDbContext.customers.Where(m=>m.Age==age).ToList();
         }
 
         public int GetCount()
         {
-            throw new NotImplementedException();
+            return AppDbContext.customers.Count();
         }
     }
 }

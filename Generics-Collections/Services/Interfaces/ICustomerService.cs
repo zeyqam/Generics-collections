@@ -11,7 +11,7 @@ namespace Generics_Collections.Services.Interfaces
     {
         List<Customer> GetAll();
         Customer GetById(int id);
-        List<Customer> GetByName(string name);
+        List<Customer> GetAllByAge(int age);
         int GetCount();
     }
 }
